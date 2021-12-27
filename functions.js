@@ -89,7 +89,12 @@ function getChannelByVideoTitle(videoTitle, channels) {
 function searchChannels(query, channels) {
   // Your code here
 
-  return channels.filter((name) => name.description.includes(query));
+  return channels.filter((elementName) => {
+    return (
+      elementName.name.includes(query) ||
+      elementName.description.includes(query)
+    );
+  });
 }
 console.log(searchChannels("the", channels));
 
