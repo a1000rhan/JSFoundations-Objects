@@ -9,6 +9,7 @@ const channels = require("./channels.json");
  ****************************************************************/
 function totalVideosDuration(channel) {
   // Your code here
+  return channels.reduce((e) => e.videos);
 }
 
 /**************************************************************
@@ -21,6 +22,7 @@ function totalVideosDuration(channel) {
  ****************************************************************/
 function channelWithMostContent(channels) {
   // Your code here
+  return tot;
 }
 
 /**************************************************************
