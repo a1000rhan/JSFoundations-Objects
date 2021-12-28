@@ -1,3 +1,4 @@
+const { duration } = require("@mui/material");
 const channels = require("./channels.json");
 
 /**************************************************************
@@ -9,7 +10,7 @@ const channels = require("./channels.json");
  ****************************************************************/
 function totalVideosDuration(channel) {
   // Your code here
-  return channels.reduce((e) => e.videos);
+  return channel.videos.reduce((a, b) => a + b.duration, 0);
 }
 
 /**************************************************************
@@ -22,9 +23,8 @@ function totalVideosDuration(channel) {
  ****************************************************************/
 function channelWithMostContent(channels) {
   // Your code here
-  return tot;
 }
-
+// console.log(channelWithMostContent(channels[0]));
 /**************************************************************
  * longestChannelName(channels):
  * - receives an array of channel objects
@@ -34,6 +34,8 @@ function channelWithMostContent(channels) {
  ****************************************************************/
 function longestChannelName(channels) {
   // Your code here
+
+  return channels.sort((a, b) => a.name.length < b.name.length);
 }
 
 // Check your answers by running this file and comparing what it logs
@@ -57,7 +59,7 @@ console.log(channelWithMostContent(channels));
 //     { title: "Joe Rogan Experience #1208 - Jordan Peterson", duration: 175 },
 //   ],
 // }
-
+console.log("---------------------------");
 console.log(longestChannelName(channels));
 // Should log:
 
